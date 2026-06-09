@@ -1,0 +1,122 @@
+<!-- Altamirano Abaroa Oscar Emiliano -->
+<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <title>Formulario de Registro</title> 
+    <style> 
+        body { 
+            font-family: 'Segoe UI', sans-serif; 
+            background-color: black; 
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        } 
+
+        .contenedor { 
+            width: 800px; 
+            padding: 30px; 
+            background: rgba(255, 255, 255, 0.08); 
+            border-radius: 15px; 
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 25px rgba(255,255,255,0.1); 
+            color: white;
+        } 
+
+        h2 { 
+            text-align: center; 
+            margin-bottom: 20px;
+        } 
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px 25px;
+        }
+
+        label {
+            font-size: 14px;
+        }
+
+        input, select { 
+            width: 100%; 
+            padding: 10px; 
+            margin-top: 5px;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            background: rgba(255,255,255,0.15);
+            color: white;
+        } 
+
+        select {
+            color: black;
+        }
+
+        input:focus, select:focus {
+            background: rgba(255,255,255,0.25);
+        }
+
+        form label:nth-last-child(2),
+        form button {
+            grid-column: span 2;
+        }
+
+        button { 
+            padding: 12px; 
+            background: #4CAF50; 
+            color: white; 
+            border: none; 
+            border-radius: 10px; 
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        } 
+
+        button:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 10px rgba(76, 175, 80, 0.6);
+        }
+
+        input[type="checkbox"] {
+            width: auto;
+            margin-right: 8px;
+        }
+    </style> 
+</head> 
+<body> 
+ 
+<div class="contenedor"> 
+    <h2>Formulario de Registro</h2> 
+     
+    <form> 
+        <label>Nombre:</label> 
+        <input type="text" name="nombre" required> 
+ 
+        <label>Correo electrónico:</label> 
+        <input type="email" name="correo" required> 
+ 
+        <label>Contraseña:</label> 
+        <input type="password" name="password" required> 
+ 
+        <label>Edad:</label> 
+        <input type="number" name="edad"> 
+ 
+        <label>Género:</label> 
+        <select name="genero"> 
+            <option>Masculino</option> 
+            <option>Femenino</option> 
+            <option>Otro</option> 
+        </select> 
+ 
+        <label> 
+            <input type="checkbox" required> Acepto los términos y condiciones 
+        </label> 
+ 
+        <button type="submit">Enviar</button> 
+    </form> 
+</div> 
+ 
+</body> 
+</html>
