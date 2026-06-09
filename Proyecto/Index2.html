@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Donkey Kong Country 2</title>
 
 <style>
@@ -12,26 +13,33 @@
 }
 
 body{
-    font-family: Verdana, sans-serif;
+    font-family:Verdana, sans-serif;
     min-height:100vh;
-    padding:30px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    position:relative;
+    overflow-x:hidden;
 
-    background:url('1139619.png') center center/cover no-repeat fixed;
+    background:url("1139619.png") center center/cover no-repeat fixed;
 }
 
+/* Capa oscura sobre el fondo */
 body::before{
     content:"";
     position:fixed;
     inset:0;
     background:rgba(0,0,0,.55);
-    z-index:-1;
+    z-index:0;
 }
 
 #principal{
     width:900px;
     max-width:100%;
-    margin:auto;
     text-align:center;
+    position:relative;
+    z-index:1;
 }
 
 h1{
@@ -46,6 +54,7 @@ h1{
     border:2px solid #444;
     padding:12px;
     border-radius:8px;
+    box-shadow:0 0 20px rgba(0,0,0,.6);
 }
 
 #game{
@@ -54,27 +63,19 @@ h1{
 }
 
 .logo{
-    margin-top:12px;
+    margin-top:15px;
     color:#ddd;
     font-size:12px;
-    text-align:center;
-    line-height:1.5;
+    line-height:1.6;
 }
 
 .credito{
-    position:fixed;
-    bottom:10px;
-    left:15px;
-    color:#ddd;
+    margin-top:15px;
+    color:#ccc;
     font-size:12px;
-    text-shadow:1px 1px 2px #000;
 }
 
 @media(max-width:768px){
-
-    body{
-        padding:10px;
-    }
 
     h1{
         font-size:24px;
@@ -97,24 +98,24 @@ h1{
     </div>
 
     <div class="logo">
-        Snes9x Online Test para proyecto de implementa<br>
+        Snes9x Online Test para proyecto de implementación<br>
         Diseñado por Altamirano Abaroa Oscar Emiliano y Moreno Moreno Lorenzo Santiago
+    </div>
+
+    <div class="credito">
+        Hecho con el emulador OpenSource EmulatorJS
     </div>
 
 </div>
 
-<div class="credito">
-    Hecho con el emulador OpenSource EmulatorJS
-</div>
-
 <script>
-EJS_player = '#game';
-EJS_core = 'snes9x';
-EJS_gameUrl = 'MX3.sfc';
-EJS_pathtodata = 'https://cdn.jsdelivr.net/gh/ethanaobrien/emulatorjs@main/data/';
+EJS_player = "#game";
+EJS_core = "snes9x";
+EJS_gameUrl = "MX3.sfc";
+EJS_pathtodata = "https://cdn.emulatorjs.org/stable/data/";
 </script>
 
-<script src="https://cdn.jsdelivr.net/gh/ethanaobrien/emulatorjs@main/data/loader.js"></script>
+<script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
 
 </body>
 </html>
