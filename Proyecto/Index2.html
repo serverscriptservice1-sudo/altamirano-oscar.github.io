@@ -19,7 +19,23 @@ body{
     justify-content:center;
     align-items:center;
     padding:30px;
-    background:url('artwork.png') center center/cover no-repeat fixed;
+    overflow:hidden;
+    background:#000;
+}
+
+.bg-slide{
+    position:fixed;
+    inset:0;
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    opacity:0;
+    transition:opacity 1.5s ease-in-out;
+    z-index:-3;
+}
+
+#bg1{
+    opacity:1;
 }
 
 body::before{
@@ -31,7 +47,7 @@ body::before{
         rgba(0,0,0,.30),
         rgba(0,0,0,.55)
     );
-    z-index:-1;
+    z-index:-2;
 }
 
 #principal{
@@ -145,6 +161,9 @@ body::before{
 </head>
 <body>
 
+<div id="bg1" class="bg-slide"></div>
+<div id="bg2" class="bg-slide"></div>
+
 <div id="principal">
 
     <div class="logo-juego">
@@ -177,6 +196,39 @@ EJS_pathtodata = 'https://cdn.jsdelivr.net/gh/ethanaobrien/emulatorjs@main/data/
 </script>
 
 <script src="https://cdn.jsdelivr.net/gh/ethanaobrien/emulatorjs@main/data/loader.js"></script>
+
+<script>
+const fondos = [
+    'artwork.png',
+    '1.gif',
+    '2.gif',
+    '3.gif',
+    '4.gif'
+];
+
+let actual = 0;
+
+const bg1 = document.getElementById('bg1');
+const bg2 = document.getElementById('bg2');
+
+bg1.style.backgroundImage = `url('${fondos[0]}')`;
+
+let visible = bg1;
+let oculto = bg2;
+
+function cambiarFondo() {
+    actual = (actual + 1) % fondos.length;
+
+    oculto.style.backgroundImage = `url('${fondos[actual]}')`;
+
+    oculto.style.opacity = '1';
+    visible.style.opacity = '0';
+
+    [visible, oculto] = [oculto, visible];
+}
+
+setInterval(cambiarFondo, 6000);
+</script>
 
 </body>
 </html>
