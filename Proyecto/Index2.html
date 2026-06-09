@@ -147,14 +147,26 @@ h1{
 
 </div>
 
-<script type="text/javascript">
-    EJS_player = '#game';
-    EJS_biosUrl = 'SCPH1001.BIN';
-    EJS_gameUrl = 'https://www.dropbox.com/scl/fi/3jm3hgkyn90r6fl4ql1io/MEGAMAN_X4.BIN?rlkey=5zv5xurcmfwnctx8p3hrlvoo7&st=ml0amc1b&dl=0';
-    EJS_core = 'psx';
-</script>
+<div style='width:640px;height:480px;max-width:100%'>
+    <div id='game'></div>
+</div>
 
-<script src="https://cdn.jsdelivr.net/gh/ethanaobrien/emulatorjs@main/data/loader.js"></script>
+<script type='text/javascript'>
+    EJS_player = '#game';
+    
+    // Can also be pcsx_rearmed or mednafen_psx_hw
+    EJS_core = 'psx';
+    
+    // URL to BIOS file
+    EJS_biosUrl = 'SCPH1001.BIN';
+    
+    // URL to Game rom
+    EJS_gameUrl = 'https://www.dropbox.com/scl/fi/3jm3hgkyn90r6fl4ql1io/MEGAMAN_X4.BIN?rlkey=5zv5xurcmfwnctx8p3hrlvoo7&st=9i60d4zs&dl=0';
+    
+    // Path to the data directory
+    EJS_pathtodata = 'data/';
+</script>
+<script src='data/loader.js'></script>
 
 </body>
 </html>
