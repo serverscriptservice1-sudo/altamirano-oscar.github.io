@@ -15,7 +15,6 @@ body{
     font-family: Verdana, sans-serif;
     min-height:100vh;
     padding:30px;
-
     background:url('1139619.png') center center/cover no-repeat fixed;
 }
 
@@ -39,6 +38,24 @@ h1{
     font-size:32px;
     margin-bottom:15px;
     text-shadow:2px 2px 4px #000;
+}
+
+.btn-regresar{
+    display:inline-block;
+    margin-bottom:15px;
+    padding:10px 20px;
+    background:#222;
+    color:#fff;
+    text-decoration:none;
+    border:2px solid #444;
+    border-radius:6px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-regresar:hover{
+    background:#444;
+    border-color:#888;
 }
 
 #contenedor{
@@ -92,6 +109,8 @@ h1{
 
     <h1>Donkey Kong Country 2</h1>
 
+    <a href="index.html" class="btn-regresar">← Regresar al Inicio</a>
+
     <div id="contenedor">
         <div id="game"></div>
     </div>
@@ -118,4 +137,3 @@ EJS_pathtodata = 'https://cdn.jsdelivr.net/gh/ethanaobrien/emulatorjs@main/data/
 
 </body>
 </html>
-
