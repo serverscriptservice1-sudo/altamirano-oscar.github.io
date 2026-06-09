@@ -147,14 +147,35 @@ h1{
 
 </div>
 
-<script type="text/javascript">
-	EJS_player = '#play';
-  EJS_pathtodata = "emulatorjs/data/";
-	EJS_biosUrl = '/bioses/psx.7z'; // Url to Bios file
-	EJS_gameUrl = '/roms/Mega Man X4 (USA).7z'; // Url to Game rom
-	EJS_core = 'psx';
+<script type='text/javascript'>
+  EJS_language = 'es_ES';
+  EJS_player = '#game';
+  // Can also be genesis_plus_gx or picodrive
+  EJS_core = 'psx';
+  EJS_biosUrl = '/games/--psx/scph5501.bin';
+  // URL to Game rom
+  EJS_gameUrl = '/games/--psx/Mega Man X4 (USA).7z';
+  
+  EJS_Buttons = {
+    playPause: true,
+    restart: true,
+    mute: true,
+    settings: true,
+    fullscreen: true,
+    saveState: true,
+    loadState: true,
+    screenRecord: false,
+    gamepad: true,
+    cheat: false,
+    volume: true,
+    quickSave: false,
+    quickLoad: false,
+    screenshot: false,
+    cacheManager: false
+  }
+  EJS_pathtodata = '/EmulatorJS4.05/data/';
 </script>
-<script src="emulatorjs/data/loader.js"></script>
+<script src='/EmulatorJS4.05/data/loader.js'></script>
 
 </body>
 </html>
