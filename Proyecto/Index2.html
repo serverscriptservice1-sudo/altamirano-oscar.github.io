@@ -19,7 +19,7 @@ body{
     justify-content:center;
     align-items:center;
     padding:30px;
-    overflow:hidden;
+    overflow:auto;
     background:#000;
 }
 
@@ -55,202 +55,416 @@ body::before{
     background:linear-gradient(
         180deg,
         rgba(0,0,0,.30),
-        rgba(0,0,0,.55)
+        rgba(0,0,0,.65)
     );
     z-index:-2;
 }
 
+
+#layout{
+
+    width:1600px;
+    max-width:98%;
+    display:grid;
+    grid-template-columns:330px 850px 330px;
+    gap:25px;
+    align-items:center;
+
+}
+
+
+.panel{
+
+    background:rgba(0,0,0,.55);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:25px;
+    backdrop-filter:blur(6px);
+    box-shadow:0 20px 50px rgba(0,0,0,.5);
+    color:white;
+}
+
+
+.panel h2{
+
+    text-align:center;
+    font-size:22px;
+    margin-bottom:20px;
+    color:#ddd;
+}
+
+
+.historia{
+
+    font-size:14px;
+    line-height:1.6;
+    color:#cfcfcf;
+    text-align:justify;
+
+}
+
+
+.panel img{
+
+    width:100%;
+    margin-top:20px;
+    border-radius:12px;
+
+}
+
+
+
 #principal{
-    width:1100px;
-    max-width:95%;
+
     background:rgba(0,0,0,.45);
     border:1px solid rgba(255,255,255,.08);
     border-radius:18px;
     padding:35px;
     backdrop-filter:blur(6px);
     box-shadow:0 20px 50px rgba(0,0,0,.4);
+
 }
+
 
 .logo-juego{
+
     display:flex;
     justify-content:center;
-    align-items:center;
     margin-bottom:8px;
+
 }
+
 
 .logo-juego img{
+
     max-width:420px;
     width:100%;
-    height:auto;
-    filter:drop-shadow(0 4px 10px rgba(0,0,0,.5));
+
 }
 
+
 .subtitulo{
+
     text-align:center;
     color:#9ca3af;
     font-size:14px;
     margin-bottom:30px;
     letter-spacing:1px;
-    text-transform:uppercase;
+
 }
 
+
 #contenedor{
+
     background:rgba(255,255,255,.03);
     border:1px solid rgba(255,255,255,.08);
     border-radius:14px;
     padding:18px;
-    backdrop-filter:blur(4px);
+
 }
 
+
 #game{
+
     width:100%;
     height:600px;
     border-radius:10px;
     overflow:hidden;
     background:#000;
+
 }
 
+
+
+.controles{
+
+    list-style:none;
+    color:#d1d1d1;
+    line-height:1.8;
+    font-size:14px;
+
+}
+
+
+.controles li::before{
+
+    content:"• ";
+    color:white;
+
+}
+
+
 .credito{
+
     margin-top:25px;
     text-align:center;
     color:#8b8b8b;
     font-size:12px;
+
 }
 
+
+
 .btn-regresar{
+
     position:fixed;
     left:20px;
     bottom:20px;
+
     background:rgba(20,20,20,.75);
     color:white;
     text-decoration:none;
+
     padding:12px 22px;
+
     border:1px solid rgba(255,255,255,.08);
     border-radius:12px;
-    transition:.25s;
-    font-weight:600;
+
     z-index:9999;
-    backdrop-filter:blur(6px);
+
 }
 
-.btn-regresar:hover{
-    transform:translateY(-2px);
-    background:rgba(31,41,55,.85);
+
+
+@media(max-width:1200px){
+
+#layout{
+
+grid-template-columns:1fr;
+
 }
 
-@media(max-width:768px){
+#game{
 
-    body{
-        padding:10px;
-    }
+height:350px;
 
-    #principal{
-        padding:18px;
-    }
-
-    .logo-juego img{
-        max-width:280px;
-    }
-
-    .subtitulo{
-        font-size:12px;
-    }
-
-    #game{
-        height:320px;
-    }
-
-    .btn-regresar{
-        left:10px;
-        bottom:10px;
-        padding:10px 18px;
-        font-size:12px;
-    }
 }
+
+}
+
 </style>
+
 </head>
+
+
 <body>
+
 
 <div id="bg1" class="bg-slide"></div>
 <div id="bg2" class="bg-slide"></div>
 <div id="fade-overlay"></div>
 
-<div id="principal">
 
-    <div class="logo-juego">
-        <img src="Mega_Man_X3_Logo.png" alt="Mega Man X3">
-    </div>
 
-    <div class="subtitulo">
-        Super Nintendo • Capcom • 1995
-    </div>
+<div id="layout">
 
-    <div id="contenedor">
-        <div id="game"></div>
-    </div>
 
-    <div class="credito">
-        Hecho con el emulador OpenSource EmulatorJS
-    </div>
+<!-- HISTORIA -->
+
+<div class="panel">
+
+<h2>Historia</h2>
+
+<p class="historia">
+
+En el año 21XX, la rebelión de Sigma fue finalmente aplastada gracias a X, Zero y los Maverick Hunters. A pesar de esto, la actividad Maverick continuó. Afortunadamente, el brillante científico Reploid, el Dr. Doppler, identificó un virus avanzado que obligaba a los Reploids a comportarse como Mavericks, denominándolo Virus Sigma.
+
+Con este descubrimiento, afirmó haber sintetizado una defensa antiviral eficaz incluso contra el Virus Sigma, y también haber desarrollado los medios para suprimir el comportamiento irregular en los Mavericks, haciendo que los Reploids infectados por el virus volvieran a la normalidad.
+
+Esto trajo consigo una era de paz. Muchos Reploids avanzados y Mavericks reformados se reunieron cerca de su nuevo mentor y fundaron "Dopple Town", una comunidad utópica perfecta. Con el Dr. Doppler guiándolos, el mundo parecía listo para entrar en una nueva edad de oro.
+
+</p>
+
+
+<img src="megamanx3.jpg">
 
 </div>
 
+
+
+
+
+
+<!-- JUEGO -->
+
+
+<div id="principal">
+
+
+<div class="logo-juego">
+
+<img src="Mega_Man_X3_Logo.png">
+
+</div>
+
+
+<div class="subtitulo">
+
+Super Nintendo • Capcom • 1995
+
+</div>
+
+
+
+<div id="contenedor">
+
+<div id="game"></div>
+
+</div>
+
+
+
+<div class="credito">
+
+Hecho con el emulador OpenSource EmulatorJS
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- CONTROLES -->
+
+
+<div class="panel">
+
+
+<h2>Controles</h2>
+
+
+<ul class="controles">
+
+<li>Dirección / Cruceta: Mover al personaje.</li>
+
+<li>Botón Y: Disparar (presiona para ráfaga, mantén presionado para cargar).</li>
+
+<li>Botón B: Saltar.</li>
+
+<li>Botón A: Cambiar arma secundaria a la derecha.</li>
+
+<li>Botón X: Cambiar arma secundaria a la izquierda.</li>
+
+<li>Botón L: Dash (correr/deslizar).</li>
+
+<li>Botón R: Dash (correr/deslizar).</li>
+
+<li>Botón Start: Pausar el juego y abrir el menú de armas.</li>
+
+</ul>
+
+
+<img src="snescontroller.png">
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
 <a href="../index.html" class="btn-regresar">
-    ← Regresar
+
+← Regresar
+
 </a>
 
+
+
+
+
 <script>
+
 EJS_player = '#game';
 EJS_core = 'snes';
 EJS_gameUrl = 'Megaman X3.smc';
 EJS_pathtodata = 'https://cdn.jsdelivr.net/gh/ethanaobrien/emulatorjs@main/data/';
+
 </script>
+
 
 <script src="https://cdn.jsdelivr.net/gh/ethanaobrien/emulatorjs@main/data/loader.js"></script>
 
+
+
+
 <script>
+
+
 const fondos = [
-    'artwork.png',
-    '1.gif',
-    '2.gif',
-    '3.gif',
-    'artwork2.jpg'
+
+'artwork.png',
+'1.gif',
+'2.gif',
+'3.gif',
+'artwork2.jpg'
+
 ];
+
 
 let actual = 0;
 
-const bg1 = document.getElementById('bg1');
-const bg2 = document.getElementById('bg2');
-const fade = document.getElementById('fade-overlay');
 
-bg1.style.backgroundImage = `url('${fondos[0]}')`;
+const bg1=document.getElementById('bg1');
+const bg2=document.getElementById('bg2');
+const fade=document.getElementById('fade-overlay');
 
-let visible = bg1;
-let oculto = bg2;
+
+bg1.style.backgroundImage=`url('${fondos[0]}')`;
+
+
+let visible=bg1;
+let oculto=bg2;
+
 
 function cambiarFondo(){
 
-    fade.style.opacity = '1';
+fade.style.opacity='1';
 
-    setTimeout(() => {
 
-        actual = (actual + 1) % fondos.length;
+setTimeout(()=>{
 
-        oculto.style.backgroundImage =
-            `url('${fondos[actual]}')`;
 
-        visible.style.opacity = '0';
-        oculto.style.opacity = '1';
+actual=(actual+1)%fondos.length;
 
-        [visible, oculto] = [oculto, visible];
 
-        fade.style.opacity = '0';
+oculto.style.backgroundImage=
+`url('${fondos[actual]}')`;
 
-    }, 1500);
+
+visible.style.opacity='0';
+
+oculto.style.opacity='1';
+
+
+[visible,oculto]=[oculto,visible];
+
+
+fade.style.opacity='0';
+
+
+},1500);
+
+
 }
 
-setInterval(cambiarFondo, 6000);
+
+setInterval(cambiarFondo,6000);
+
+
+
 </script>
+
 
 </body>
 </html>
